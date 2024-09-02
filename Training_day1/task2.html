@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Product Name : <input type="text" id="t1" />
+        <br /> <br />
+    Unit Price: <input type="text" id="t2" />
+        <br /><br />
+    Quantity: <input type="text" id="t3" />
+        <br /><br />
+        <input type="button" onclick="f1()" value="Get Total" />
+    <p id="p1"></p>
+</body>
+   <script>
+       function f1() {
+        let paraObj =document.getElementById("p1");
+       let pObj=document.getElementById("t1");
+       let uObj=document.getElementById("t2");
+       let qObj=document.getElementById("t3");
+       let product= pObj.value;
+       let price= parseInt(uObj.value);
+       let qty= parseInt(qObj.value);
+       if (qty > 30)
+       {
+            paraObj.innerHTML="Total Amount: " + (price*0.8*qty);
+       }
+       else if (qty > 20)
+       {
+            paraObj.innerHTML="Total Amount: " + (price*0.85*qty);
+       }
+    else if (qty > 10)
+       {
+            paraObj.innerHTML="Total Amount: " + (price*0.9*qty);
+       }
+    else{
+        paraObj.innerHTML="Total Amount: " + (price*qty);
+    }
+
+       }
+   </script>
+</html>
